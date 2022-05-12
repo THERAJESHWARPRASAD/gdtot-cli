@@ -2,13 +2,7 @@ import re
 import base64
 import requests
 from urllib.parse import urlparse, parse_qs
-
-# file url
-URL = "" 
-
-# add your crypt cookie here
-crypt = "" 
-
+import re
 # ==========================================
 
 def parse_info(res):
@@ -25,7 +19,7 @@ def parse_info(res):
 
 # ==========================================
 
-def gdtot_dl(url):
+def gdtot_dl(url, crypt):
     client = requests.Session()
     client.cookies.update({ 'crypt': crypt })
     res = client.get(url)
@@ -65,9 +59,8 @@ def gdtot_dl(url):
     
 # ==========================================
 
-info = gdtot_dl(URL)
-
-print(info)
+# info = gdtot_dl(URL)
+# print(info)
 
 # ==========================================
 '''
